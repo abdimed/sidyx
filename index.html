@@ -18,170 +18,267 @@
 
 <body class="antialiased max-w-screen relative overflow-x-hidden z-0">
 
-    <div class="z-20">
+    <div class="z-0 bg-white " x-data="{ section1: false, section2: false, section3: false, section4: false }">
 
-        <div class="flex sticky top-0  overflow-x-hidden" x-data="{ section1: false, section2: false, section3: false, section4: false}"
-            x-on:scroll.window="section1 = (window.pageYOffset > window.innerHeight) ? true : false"
+        <div class="flex sticky top-0 overflow-hidden z-50 bg-white"
+            x-on:scroll.window="section1 = (window.pageYOffset > 20) ? true : false"
             :class="{
                 'transition-all duration-700 lg:duration-1000 -translate-y-full': section4,
                 'transition-all duration-700 lg:duration-1000 scale-100': !section4
             }">
 
-            <section class="w-screen h-screen shrink-0 flex flex-col lg:flex-row z-10"
+            <!--section 1 -->
+            <section class="w-screen h-screen shrink-0 bg-white flex flex-col lg:flex-row z-10 "
                 :class="{
                     'transition-all ease-in-out duration-700 lg:duration-1000 w-0': section1,
                     'transition-all ease-in-out duration-700 lg:duration-1000 w-screen': !section1
                 }">
 
-                <div class="w-full lg:w-fit h-10 lg:h-full flex items-end bg-mobis text-white text-2xl py-20">
+                <div
+                    class="w-full px-5 lg:px-0 lg:w-32 h-fit lg:h-full flex flex-row lg:flex-col justify-between items-center bg-ccbo text-white text-2xl py-1 lg:py-4">
 
-                    <h2 class="lg:-rotate-90"> Welcome </h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="56"
+                        height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <polyline points="5 12 3 12 12 3 21 12 19 12" />
+                        <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                        <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                    </svg>
 
+                    <h2 class="lg:-rotate-90 text-4xl lg:mb-10 font-extrabold"> BOIS </h2>
                 </div>
 
-                <div class="container m-auto">
-                    <div class="grid grid-cols-2 w-full">
+
+                <div class="container m-auto flex flex-col  relative">
+                    <div class=""
+                        :class="{
+                            'transition-all ease-in-out duration-700 scale-0 opacity-0 ': section1,
+                            'transition-all ease-in-out duration-700 scale-100 ': !section1
+                        }">
+                        <img class="w-32" src="http://127.0.0.1:8000/images/logs55.jpg" alt="">
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 w-full">
 
                         <img src="images/1.png" alt="img"
                             :class="{
                                 'transition-all ease-in-out duration-700 scale-0 opacity-0 ': section1,
                                 'transition-all ease-in-out duration-700 scale-100 ': !section1
                             }">
-                        <p
+                        <div
                             :class="{
                                 'transition-all ease-in-out duration-700 lg:duration-1000 scale-0 opacity-0 ': section1,
                                 'transition-all ease-in-out duration-700 lg:duration-1000 scale-100 ': !section1
                             }">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolore perspiciatis
-                            eligendi
-                            aliquid nihil dolorem debitis id corporis sunt mollitia dolores pariatur, harum ab eius
-                            laboriosam
-                            repellendus delectus facere reprehenderit.
-                        </p>
+                            <h2 class="text-ccbo text-4xl font-extrabold">
+                                Bois Rouge
+                            </h2>
+                            <p class="text-2xl mt-5">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolore perspiciatis
+                                eligendi
+                                aliquid nihil dolorem debitis id corporis sunt mollitia dolores pariatur, harum ab eius
+                                laboriosam
+                                repellendus delectus facere reprehenderit.
+                            </p>
+                        </div>
+
                     </div>
                 </div>
 
             </section>
 
-            <section class="w-screen  bg-green-500 h-screen shrink-0 flex flex-col lg:flex-row z-20"
+            <!-- END section 1 -->
+
+            <!--section 2 -->
+            <section class="w-screen h-screen shrink-0 bg-white flex flex-col lg:flex-row z-20"
                 x-on:scroll.window="section2 = (window.pageYOffset > window.innerHeight*2) ? true : false"
                 :class="{
                     'transition-all ease-in-out duration-700 lg:duration-1000 w-0': section2,
                     'transition-all ease-in-out duration-700 lg:duration-1000 w-screen': !section2
                 }">
 
-                <div class="w-full lg:w-fit h-10 lg:h-full flex items-end bg-mobis text-white text-2xl py-20">
+                <div
+                    class="w-screen hidden lg:w-28 h-10 lg:h-full lg:flex flex-col justify-between items-center bg-ccbo text-white text-2xl py-4">
 
-                    <h2 class="lg:-rotate-90 truncate"> NOS PRODUITS </h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="56"
+                        height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <polyline points="5 12 3 12 12 3 21 12 19 12" />
+                        <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                        <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                    </svg>
 
                 </div>
 
-                <div class="container m-auto">
-                    <div class="grid grid-cols-2 w-full">
-
-                        <img src="images/1.png" alt="img"
+                <div class="container m-auto flex flex-col ">
+                    <div class="">
+                        <img class="w-32" src="http://127.0.0.1:8000/images/logs55.jpg" alt=""
                             :class="{
                                 'transition-all ease-in-out duration-700 scale-0 opacity-0 ': section2,
                                 'transition-all ease-in-out duration-700 scale-100 ': !section2
                             }">
-                        <p
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 w-full">
+
+                        <img src="images/2.png" alt="img"
+                            :class="{
+                                'transition-all ease-in-out duration-700 scale-0 opacity-0 ': section2,
+                                'transition-all ease-in-out duration-700 scale-100 ': !section2
+                            }">
+                        <div
                             :class="{
                                 'transition-all ease-in-out duration-700 lg:duration-1000 scale-0 opacity-0 ': section2,
                                 'transition-all ease-in-out duration-700 lg:duration-1000 scale-100 ': !section2
                             }">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolore perspiciatis
-                            eligendi
-                            aliquid nihil dolorem debitis id corporis sunt mollitia dolores pariatur, harum ab eius
-                            laboriosam
-                            repellendus delectus facere reprehenderit.
-                        </p>
+                            <h2 class="text-ccbo text-4xl font-extrabold">
+                                Bois Blanc
+                            </h2>
+                            <p class="text-2xl mt-5">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolore perspiciatis
+                                eligendi
+                                aliquid nihil dolorem debitis id corporis sunt mollitia dolores pariatur, harum ab eius
+                                laboriosam
+                                repellendus delectus facere reprehenderit.
+                            </p>
+                        </div>
+
+
                     </div>
                 </div>
 
             </section>
 
 
-            <section class="w-screen  bg-red-500 h-screen shrink-0 flex flex-col lg:flex-row z-20"
-            x-on:scroll.window="section3 = (window.pageYOffset > window.innerHeight*3) ? true : false"
-            :class="{
-                'transition-all ease-in-out duration-700 lg:duration-1000 w-0': section3,
-                'transition-all ease-in-out duration-700 lg:duration-1000 w-screen': !section3
-            }">
+            <!--section 3 -->
+            <section class="w-screen h-screen shrink-0 bg-white flex flex-col lg:flex-row z-30 overflow-y-hidden"
+                x-on:scroll.window="section3 = (window.pageYOffset > window.innerHeight*3) ? true : false"
+                :class="{
+                    'transition-all ease-in-out duration-700 lg:duration-1000 w-0': section3,
+                    'transition-all ease-in-out duration-700 lg:duration-1000 w-screen': !section3
+                }">
 
-            <div class="w-full lg:w-fit h-10 lg:h-full flex items-end bg-mobis text-white text-2xl py-20">
+                <div
+                    class="w-full lg:w-28 h-10 lg:h-full hidden lg:flex flex-col justify-between items-center bg-ccbo text-white text-2xl py-4">
 
-                <h2 class="lg:-rotate-90 truncate"> NOS PRODUITS </h2>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="56"
+                        height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <polyline points="5 12 3 12 12 3 21 12 19 12" />
+                        <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                        <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                    </svg>
 
-            </div>
-
-            <div class="container m-auto">
-                <div class="grid grid-cols-2 w-full">
-
-                    <img src="images/1.png" alt="img"
-                        :class="{
-                            'transition-all ease-in-out duration-700 scale-0 opacity-0 ': section3,
-                            'transition-all ease-in-out duration-700 scale-100 ': !section3
-                        }">
-                    <p
-                        :class="{
-                            'transition-all ease-in-out duration-700 lg:duration-1000 scale-0 opacity-0 ': section3,
-                            'transition-all ease-in-out duration-700 lg:duration-1000 scale-100 ': !section3
-                        }">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolore perspiciatis
-                        eligendi
-                        aliquid nihil dolorem debitis id corporis sunt mollitia dolores pariatur, harum ab eius
-                        laboriosam
-                        repellendus delectus facere reprehenderit.
-                    </p>
                 </div>
-            </div>
 
-        </section>
+                <div class="container m-auto flex flex-col ">
+                    <div class="">
+                        <img class="w-32" src="http://127.0.0.1:8000/images/logs55.jpg" alt=""
+                            :class="{
+                                'transition-all ease-in-out duration-700 scale-0 opacity-0 ': section3,
+                                'transition-all ease-in-out duration-700 scale-100 ': !section3
+                            }">
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 w-full">
 
-            <section class="w-screen  bg-yellow-500 h-screen shrink-0 flex flex-col lg:flex-row z-30"
+                        <img src="images/3.png" alt="img"
+                            :class="{
+                                'transition-all ease-in-out duration-700 scale-0 opacity-0 ': section3,
+                                'transition-all ease-in-out duration-700 scale-100 ': !section3
+                            }">
+                        <div
+                            :class="{
+                                'transition-all ease-in-out duration-700 lg:duration-1000 scale-0 opacity-0 ': section3,
+                                'transition-all ease-in-out duration-700 lg:duration-1000 scale-100 ': !section3
+                            }">
+                            <h2 class="text-ccbo text-4xl font-extrabold">
+                                Bois Blanc
+                            </h2>
+                            <p class="text-2xl mt-5">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolore perspiciatis
+                                eligendi
+                                aliquid nihil dolorem debitis id corporis sunt mollitia dolores pariatur, harum ab eius
+                                laboriosam
+                                repellendus delectus facere reprehenderit.
+                            </p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!--section 4 -->
+            <section class="w-screen h-screen shrink-0 bg-white flex flex-col lg:flex-row z-40"
                 x-on:scroll.window="section4 = (window.pageYOffset > window.innerHeight*4) ? true : false">
 
-                <div class="w-full lg:w-fit h-10 lg:h-full flex items-end bg-mobis text-white text-2xl py-20">
 
-                    <h2 class="lg:-rotate-90"> NOS trucs</h2>
+                <div
+                    class="w-full lg:w-28 h-10 lg:h-full hidden lg:flex flex-col justify-between items-center bg-ccbo text-white text-2xl py-4">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="56"
+                        height="56" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <polyline points="5 12 3 12 12 3 21 12 19 12" />
+                        <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                        <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                    </svg>
+
+
 
                 </div>
 
+                <div class="container m-auto flex flex-col ">
+                    <div class="">
+                        <img class="w-32" src="http://127.0.0.1:8000/images/logs55.jpg" alt="">
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 w-full">
 
-                <div class="container m-auto">
-                    <div class="grid grid-cols-2 w-full">
+                        <img src="images/4.png" alt="img">
+                        <div>
+                            <h2 class="text-ccbo text-4xl font-extrabold">
+                                Bois Blanc
+                            </h2>
+                            <p class="text-2xl mt-5">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolore perspiciatis
+                                eligendi
+                                aliquid nihil dolorem debitis id corporis sunt mollitia dolores pariatur, harum ab eius
+                                laboriosam
+                                repellendus delectus facere reprehenderit.
+                            </p>
+                        </div>
 
-                        <img src="images/1.png" alt="img">
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolore perspiciatis
-                            eligendi
-                            aliquid nihil dolorem debitis id corporis sunt mollitia dolores pariatur, harum ab eius
-                            laboriosam
-                            repellendus delectus facere reprehenderit.
-                        </p>
+
                     </div>
                 </div>
 
             </section>
+
+
+
 
         </div>
 
-        <div class="-z-10">
+        <div class="z-10">
 
             <div class="h-screen w-screen opacity-0">
                 <h1 class="text-6xl">sections 1</h1>
             </div>
 
             <div class="h-screen w-screen opacity-0 bg-pink-500">
-                <h1 class="text-6xl" >section V2</h1>
+                <h1 class="text-6xl">section V2</h1>
             </div>
 
 
             <div class="h-screen w-screen opacity-0 bg-violet-600">
-                <h1 class="text-6xl"  >section V3</h1>
+                <h1 class="text-6xl">Le reste du site web</h1>
             </div>
             <div class="h-screen w-screen bg-white">
-                <h1 class="text-6xl mt-10"  >section V3</h1>
+                <h1 class="text-6xl mt-10">Le reste du site web</h1>
             </div>
 
         </div>
