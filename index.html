@@ -16,56 +16,96 @@
 
 </head>
 
-<body class="antialiased max-w-screen relative">
+<body class="antialiased max-w-screen relative overflow-x-hidden z-0">
 
-    <div class="flex sticky top-0  overflow-x-hidden" x-data="{ section1: false, section2: false, section3: false }"
-        x-on:scroll.window="section1 = (window.pageYOffset > 40) ? true : false"
+    <div class="z-20">
 
-        :class="{
-            'transition-all duration-1000 opacity-0 scale-0': section3,
-            'transition-all duration-1000 scale-100': !section3
-        }">
-
-        <section class="w-screen h-screen shrink-0 flex flex-col lg:flex-row z-10"
+        <div class="flex sticky top-0  overflow-x-hidden" x-data="{ section1: false, section2: false, section3: false, section4: false}"
+            x-on:scroll.window="section1 = (window.pageYOffset > window.innerHeight) ? true : false"
             :class="{
-                'transition-all ease-in-out duration-1000 w-0': section1,
-                'transition-all ease-in-out duration-1000 w-screen': !section1
+                'transition-all duration-700 lg:duration-1000 -translate-y-full': section4,
+                'transition-all duration-700 lg:duration-1000 scale-100': !section4
             }">
 
-            <div class="w-full lg:w-fit h-10 lg:h-full flex items-end bg-mobis text-white text-2xl py-20">
+            <section class="w-screen h-screen shrink-0 flex flex-col lg:flex-row z-10"
+                :class="{
+                    'transition-all ease-in-out duration-700 lg:duration-1000 w-0': section1,
+                    'transition-all ease-in-out duration-700 lg:duration-1000 w-screen': !section1
+                }">
 
-                <h2 class="lg:-rotate-90"> Welcome </h2>
+                <div class="w-full lg:w-fit h-10 lg:h-full flex items-end bg-mobis text-white text-2xl py-20">
 
-            </div>
+                    <h2 class="lg:-rotate-90"> Welcome </h2>
 
-            <div class="container m-auto">
-                <div class="grid grid-cols-2 w-full">
-
-                    <img src="images/1.png" alt="img"
-                        :class="{
-                            'transition-all ease-in-out duration-700 scale-0 opacity-0 ': section1,
-                            'transition-all ease-in-out duration-700 scale-100 ': !section1
-                        }">
-                    <p
-                        :class="{
-                            'transition-all ease-in-out duration-1000 scale-0 opacity-0 ': section1,
-                            'transition-all ease-in-out duration-1000 scale-100 ': !section1
-                        }">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolore perspiciatis eligendi
-                        aliquid nihil dolorem debitis id corporis sunt mollitia dolores pariatur, harum ab eius
-                        laboriosam
-                        repellendus delectus facere reprehenderit.
-                    </p>
                 </div>
-            </div>
 
-        </section>
+                <div class="container m-auto">
+                    <div class="grid grid-cols-2 w-full">
 
-        <section class="w-screen  bg-green-500 h-screen shrink-0 flex flex-col lg:flex-row z-20"
-            x-on:scroll.window="section2 = (window.pageYOffset > 300) ? true : false"
+                        <img src="images/1.png" alt="img"
+                            :class="{
+                                'transition-all ease-in-out duration-700 scale-0 opacity-0 ': section1,
+                                'transition-all ease-in-out duration-700 scale-100 ': !section1
+                            }">
+                        <p
+                            :class="{
+                                'transition-all ease-in-out duration-700 lg:duration-1000 scale-0 opacity-0 ': section1,
+                                'transition-all ease-in-out duration-700 lg:duration-1000 scale-100 ': !section1
+                            }">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolore perspiciatis
+                            eligendi
+                            aliquid nihil dolorem debitis id corporis sunt mollitia dolores pariatur, harum ab eius
+                            laboriosam
+                            repellendus delectus facere reprehenderit.
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="w-screen  bg-green-500 h-screen shrink-0 flex flex-col lg:flex-row z-20"
+                x-on:scroll.window="section2 = (window.pageYOffset > window.innerHeight*2) ? true : false"
+                :class="{
+                    'transition-all ease-in-out duration-700 lg:duration-1000 w-0': section2,
+                    'transition-all ease-in-out duration-700 lg:duration-1000 w-screen': !section2
+                }">
+
+                <div class="w-full lg:w-fit h-10 lg:h-full flex items-end bg-mobis text-white text-2xl py-20">
+
+                    <h2 class="lg:-rotate-90 truncate"> NOS PRODUITS </h2>
+
+                </div>
+
+                <div class="container m-auto">
+                    <div class="grid grid-cols-2 w-full">
+
+                        <img src="images/1.png" alt="img"
+                            :class="{
+                                'transition-all ease-in-out duration-700 scale-0 opacity-0 ': section2,
+                                'transition-all ease-in-out duration-700 scale-100 ': !section2
+                            }">
+                        <p
+                            :class="{
+                                'transition-all ease-in-out duration-700 lg:duration-1000 scale-0 opacity-0 ': section2,
+                                'transition-all ease-in-out duration-700 lg:duration-1000 scale-100 ': !section2
+                            }">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolore perspiciatis
+                            eligendi
+                            aliquid nihil dolorem debitis id corporis sunt mollitia dolores pariatur, harum ab eius
+                            laboriosam
+                            repellendus delectus facere reprehenderit.
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <section class="w-screen  bg-red-500 h-screen shrink-0 flex flex-col lg:flex-row z-20"
+            x-on:scroll.window="section3 = (window.pageYOffset > window.innerHeight*3) ? true : false"
             :class="{
-                'transition-all ease-in-out duration-1000 w-0': section2,
-                'transition-all ease-in-out duration-1000 w-screen': !section2
+                'transition-all ease-in-out duration-700 lg:duration-1000 w-0': section3,
+                'transition-all ease-in-out duration-700 lg:duration-1000 w-screen': !section3
             }">
 
             <div class="w-full lg:w-fit h-10 lg:h-full flex items-end bg-mobis text-white text-2xl py-20">
@@ -79,69 +119,74 @@
 
                     <img src="images/1.png" alt="img"
                         :class="{
-                            'transition-all ease-in-out duration-700 scale-0 opacity-0 ': section2,
-                            'transition-all ease-in-out duration-700 scale-100 ': !section2
-                        }">
-                    <p
-                        :class="{
-                            'transition-all ease-in-out duration-1000 scale-0 opacity-0 ': section2,
-                            'transition-all ease-in-out duration-1000 scale-100 ': !section2
-                        }">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolore perspiciatis eligendi
-                        aliquid nihil dolorem debitis id corporis sunt mollitia dolores pariatur, harum ab eius
-                        laboriosam
-                        repellendus delectus facere reprehenderit.
-                    </p>
-                </div>
-            </div>
-
-        </section>
-
-
-        <section class="w-screen  bg-red-500 h-screen shrink-0 flex flex-col lg:flex-row z-30"
-        x-on:scroll.window="section3 = (window.pageYOffset > 500) ? true : false"
-            :class="{
-                'transition-all ease-in-out duration-1000 w-0': section3,
-                'transition-all ease-in-out duration-1000 w-screen': !section3
-            }">
-
-            <div class="w-full lg:w-fit h-10 lg:h-full flex items-end bg-mobis text-white text-2xl py-20">
-
-                <h2 class="lg:-rotate-90"> NOS SERVICES </h2>
-
-            </div>
-
-
-            <div class="container m-auto">
-                <div class="grid grid-cols-2 w-full">
-
-                    <img src="images/1.png" alt="img"
-                        :class="{
-                            'transition-all ease-in-out duration-700 scale-0': section3,
+                            'transition-all ease-in-out duration-700 scale-0 opacity-0 ': section3,
                             'transition-all ease-in-out duration-700 scale-100 ': !section3
                         }">
                     <p
                         :class="{
-                            'transition-all ease-in-out duration-1000 scale-0': section3,
-                            'transition-all ease-in-out duration-1000 scale-100 ': !section3
+                            'transition-all ease-in-out duration-700 lg:duration-1000 scale-0 opacity-0 ': section3,
+                            'transition-all ease-in-out duration-700 lg:duration-1000 scale-100 ': !section3
                         }">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolore perspiciatis eligendi
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolore perspiciatis
+                        eligendi
                         aliquid nihil dolorem debitis id corporis sunt mollitia dolores pariatur, harum ab eius
                         laboriosam
                         repellendus delectus facere reprehenderit.
                     </p>
                 </div>
             </div>
+
         </section>
 
+            <section class="w-screen  bg-yellow-500 h-screen shrink-0 flex flex-col lg:flex-row z-30"
+                x-on:scroll.window="section4 = (window.pageYOffset > window.innerHeight*4) ? true : false">
 
+                <div class="w-full lg:w-fit h-10 lg:h-full flex items-end bg-mobis text-white text-2xl py-20">
+
+                    <h2 class="lg:-rotate-90"> NOS trucs</h2>
+
+                </div>
+
+
+                <div class="container m-auto">
+                    <div class="grid grid-cols-2 w-full">
+
+                        <img src="images/1.png" alt="img">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dolore perspiciatis
+                            eligendi
+                            aliquid nihil dolorem debitis id corporis sunt mollitia dolores pariatur, harum ab eius
+                            laboriosam
+                            repellendus delectus facere reprehenderit.
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+
+        <div class="-z-10">
+
+            <div class="h-screen w-screen opacity-0">
+                <h1 class="text-6xl">sections 1</h1>
+            </div>
+
+            <div class="h-screen w-screen opacity-0 bg-pink-500">
+                <h1 class="text-6xl" >section V2</h1>
+            </div>
+
+
+            <div class="h-screen w-screen opacity-0 bg-violet-600">
+                <h1 class="text-6xl"  >section V3</h1>
+            </div>
+            <div class="h-screen w-screen bg-white">
+                <h1 class="text-6xl mt-10"  >section V3</h1>
+            </div>
+
+        </div>
     </div>
-    <div class="h-screen w-screen ">
-        <h1 class="text-6xl">section V1</h1>
-    </div>
-    <div class="h-screen w-screen bg-pink-500">
-        <h1 class="text-6xl">section V2</h1>
-    </div>
+
 </body>
 
 </html>
