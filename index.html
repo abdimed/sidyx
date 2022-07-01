@@ -18,9 +18,9 @@
 
 <body class="antialiased max-w-screen relative overflow-x-hidden z-0">
 
-    <div class="z-0 bg-white " x-data="{ section1: false, section2: false, section3: false, section4: false }">
+    <div class="z-0 bg-white" x-data="{ section1: false, section2: false, section3: false, section4: false }">
 
-        <div class="flex sticky top-0 overflow-hidden z-50 bg-white"
+        <div class="flex sticky shrink-0 top-0 overflow-hidden z-50 bg-white"
             x-on:scroll.window="section1 = (window.pageYOffset > 20) ? true : false"
             :class="{
                 'transition-all duration-700 lg:duration-1000 -translate-y-full': section4,
@@ -31,7 +31,7 @@
             <section class="w-screen h-screen shrink-0 bg-white flex flex-col lg:flex-row z-10 "
                 :class="{
                     'transition-all ease-in-out duration-700 lg:duration-1000 w-0': section1,
-                    'transition-all ease-in-out duration-700 lg:duration-1000 w-screen': !section1
+                    'transition-all ease-in-out duration-700 lg:duration-1000': !section1
                 }">
 
                 <div
@@ -50,26 +50,15 @@
                 </div>
 
 
-                <div class="container m-auto flex flex-col  relative">
-                    <div class=""
-                        :class="{
-                            'transition-all ease-in-out duration-700 scale-0 opacity-0 ': section1,
-                            'transition-all ease-in-out duration-700 scale-100 ': !section1
-                        }">
-                        <img class="w-32" src="http://127.0.0.1:8000/images/logs55.jpg" alt="">
+                <div class="container px-2 m-auto grid grid-cols-1 h-full relative py-10" x-show="!section1" x-transition.duration.100ms>
+                    <div>
+                        <img class="w-32" src="http://10.1.1.5/images/logs55.jpg" alt="img">
                     </div>
-                    <div class="grid grid-cols-1 lg:grid-cols-2 w-full">
 
-                        <img src="images/1.png" alt="img"
-                            :class="{
-                                'transition-all ease-in-out duration-700 scale-0 opacity-0 ': section1,
-                                'transition-all ease-in-out duration-700 scale-100 ': !section1
-                            }">
-                        <div
-                            :class="{
-                                'transition-all ease-in-out duration-700 lg:duration-1000 scale-0 opacity-0 ': section1,
-                                'transition-all ease-in-out duration-700 lg:duration-1000 scale-100 ': !section1
-                            }">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 w-full gap-1">
+
+                        <img src="images/1.png" alt="img">
+                        <div>
                             <h2 class="text-ccbo text-4xl font-extrabold">
                                 Bois Rouge
                             </h2>
@@ -94,7 +83,7 @@
                 x-on:scroll.window="section2 = (window.pageYOffset > window.innerHeight*2) ? true : false"
                 :class="{
                     'transition-all ease-in-out duration-700 lg:duration-1000 w-0': section2,
-                    'transition-all ease-in-out duration-700 lg:duration-1000 w-screen': !section2
+                    'transition-all ease-in-out duration-700 lg:duration-1000': !section2
                 }">
 
                 <div
@@ -111,26 +100,14 @@
 
                 </div>
 
-                <div class="container m-auto flex flex-col ">
+                <div class="container px-2 m-auto grid grid-cols-1 h-full relative py-10" x-show="!section2" x-transition.duration.100ms>
                     <div class="">
-                        <img class="w-32" src="http://127.0.0.1:8000/images/logs55.jpg" alt=""
-                            :class="{
-                                'transition-all ease-in-out duration-700 scale-0 opacity-0 ': section2,
-                                'transition-all ease-in-out duration-700 scale-100 ': !section2
-                            }">
+                        <img class="w-32" src="http://10.1.1.5/images/logs55.jpg" alt="">
                     </div>
                     <div class="grid grid-cols-1 lg:grid-cols-2 w-full">
 
-                        <img src="images/2.png" alt="img"
-                            :class="{
-                                'transition-all ease-in-out duration-700 scale-0 opacity-0 ': section2,
-                                'transition-all ease-in-out duration-700 scale-100 ': !section2
-                            }">
-                        <div
-                            :class="{
-                                'transition-all ease-in-out duration-700 lg:duration-1000 scale-0 opacity-0 ': section2,
-                                'transition-all ease-in-out duration-700 lg:duration-1000 scale-100 ': !section2
-                            }">
+                        <img src="images/2.png" alt="img">
+                        <div>
                             <h2 class="text-ccbo text-4xl font-extrabold">
                                 Bois Blanc
                             </h2>
@@ -172,26 +149,14 @@
 
                 </div>
 
-                <div class="container m-auto flex flex-col ">
+                <div class="container px-2 m-auto grid grid-cols-1 h-full relative py-10" x-show="!section3" x-transition.duration.100ms>
                     <div class="">
-                        <img class="w-32" src="http://127.0.0.1:8000/images/logs55.jpg" alt=""
-                            :class="{
-                                'transition-all ease-in-out duration-700 scale-0 opacity-0 ': section3,
-                                'transition-all ease-in-out duration-700 scale-100 ': !section3
-                            }">
+                        <img class="w-32" src="http://10.1.1.5/images/logs55.jpg" alt="">
                     </div>
                     <div class="grid grid-cols-1 lg:grid-cols-2 w-full">
 
-                        <img src="images/3.png" alt="img"
-                            :class="{
-                                'transition-all ease-in-out duration-700 scale-0 opacity-0 ': section3,
-                                'transition-all ease-in-out duration-700 scale-100 ': !section3
-                            }">
-                        <div
-                            :class="{
-                                'transition-all ease-in-out duration-700 lg:duration-1000 scale-0 opacity-0 ': section3,
-                                'transition-all ease-in-out duration-700 lg:duration-1000 scale-100 ': !section3
-                            }">
+                        <img src="images/3.png" alt="img">
+                        <div>
                             <h2 class="text-ccbo text-4xl font-extrabold">
                                 Bois Blanc
                             </h2>
@@ -232,9 +197,9 @@
 
                 </div>
 
-                <div class="container m-auto flex flex-col ">
+                <div class="container px-2 m-auto grid grid-cols-1 h-full relative py-10" >
                     <div class="">
-                        <img class="w-32" src="http://127.0.0.1:8000/images/logs55.jpg" alt="">
+                        <img class="w-32" src="http://10.1.1.5/images/logs55.jpg" alt="">
                     </div>
                     <div class="grid grid-cols-1 lg:grid-cols-2 w-full">
 
